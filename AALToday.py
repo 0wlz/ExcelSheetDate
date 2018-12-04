@@ -1,6 +1,6 @@
 import os, openpyxl, datetime, time
 
-os.chdir('C:\\Users\\taket\\OneDrive\\Documents\\Python projects') # Opens the directory that contains the workbook
+os.chdir('G:\\Desktop\\AAL DOCUMENTS') # Opens the directory that contains the workbook
 
 wb = openpyxl.load_workbook('AAL Records.xlsx') # Loads the workbook
 
@@ -50,7 +50,13 @@ sheet['A35'] = 'BR2'
 sheet['B1'] = 'Species'  #Assigns cells for titles
 sheet['C1'] = 'Basking Temp'
 sheet['D1'] = 'Ambient Temp'
-sheet['E1'] = 'UVI Reading'
 
-wb.save('AAL Records.xlsx') #Saves the changes
+
+sheet['E1'] = '=IF(ISNUMBER(SEARCH("Tue",AA1)),"UVI Readings","") '
+
+sheet['Z1'] = '=WEEKDAY(TODAY())'
+sheet['AA1'] = '=TEXT(Z1,"ddd")'
+
+
+wb.save('AAL Records.xlsx')
 
