@@ -52,5 +52,5 @@ sheet['C1'] = 'Basking Temp'
 sheet['D1'] = 'Ambient Temp'
 sheet['E1'] = 'UVI Reading'
 
-wb.save('AAL Records.xlsx')
+wb.save('AAL Records.xlsx') #Saves the changes
 
